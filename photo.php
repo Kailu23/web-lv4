@@ -90,7 +90,7 @@ $komentari = $komentari_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
         <img src="<?= htmlspecialchars($slika['putanja']) ?>"
              alt="<?= htmlspecialchars($slika['opis'] ?? $slika['naziv_datoteke']) ?>"
-             style="max-width:100%;border-radius:10px;">
+             >
 
         <h2><?= htmlspecialchars($slika['opis'] ?? $slika['naziv_datoteke']) ?></h2>
 

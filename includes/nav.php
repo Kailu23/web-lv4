@@ -12,8 +12,6 @@ require_once __DIR__ . '/auth.php';
         <li><a href="/index.php">Početna</a></li>
         <li><a href="/films.php">Filmovi</a></li>
         <li><a href="/grafikon.html">Grafikon</a></li>
-        <li><a href="/slike.php">Slike</a></li>
-        <li><a href="/galerija.php">Galerija</a></li>
         <li><a href="/gallery.php">Ocjeni slike</a></li>
         <?php if (je_prijavljen()): ?>
             <li><a href="/my_videoteka.php">Moja videoteka</a></li>
