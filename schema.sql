@@ -98,10 +98,6 @@ INSERT INTO filmovi (naslov, zanr, godina, trajanje_min, ocjena, reziser, zemlja
 ('The Lion King','Animation, Adventure',1994,88,8.5,'Roger Allers','USA'),
 ('The Departed','Crime, Drama',2006,151,8.5,'Martin Scorsese','USA');
 
-INSERT INTO `ocjene` (`id`, `id_korisnik`, `id_slika`, `ocjena`, `komentar`, `vrijeme_ocjene`) VALUES
-(1, 2, 2, 4, '', '2026-05-23 14:46:18'),
-(6, 2, 1, 5, '', '2026-05-23 15:01:18');
-
 INSERT INTO `slike` (`id`, `naziv_datoteke`, `opis`, `putanja`, `izvor`, `uploaded_by`, `created_at`) VALUES
 (1, 'photo1.jpg', 'Meowtain', 'public/images/photo1.jpg', 'lokalno', 1, '2026-05-23 14:22:48'),
 (2, 'photo2.jpg', 'Fake RNG', 'public/images/photo2.jpg', 'lokalno', 1, '2026-05-23 14:23:05'),
@@ -118,3 +114,6 @@ INSERT INTO `slike` (`id`, `naziv_datoteke`, `opis`, `putanja`, `izvor`, `upload
 (13, 'api_slika_11.jpg', 'Slika 11', 'https://picsum.photos/900/600?random=11', 'api', 1, '2026-05-23 15:30:16'),
 (14, 'api_slika_12.jpg', 'Slika 12', 'https://picsum.photos/900/600?random=12', 'api', 1, '2026-05-23 15:30:16');
 
+INSERT INTO `ocjene` (`id`, `id_korisnik`, `id_slika`, `ocjena`, `komentar`, `vrijeme_ocjene`) VALUES
+(1, 2, 2, 4, '', '2026-05-23 14:46:18'),
+(6, 2, 1, 5, '', '2026-05-23 15:01:18');
