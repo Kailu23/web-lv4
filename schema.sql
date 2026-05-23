@@ -61,11 +61,12 @@ CREATE TABLE IF NOT EXISTS ocjene (
     FOREIGN KEY (id_slika) REFERENCES slike(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Admin korisnik (lozinka: admin123)
-INSERT INTO korisnici (username, email, lozinka, uloga) VALUES
-('admin', 'admin@lv4.hr', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
+-- Admin korisnik ()
+INSERT INTO `korisnici` (`id`, `username`, `email`, `lozinka`, `uloga`, `created_at`) VALUES
+(1, 'admin', 'admin@lv4.hr', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', '2026-05-23 14:00:26'),
+(2, 'test', 'test@test.t', '$2y$10$qGAfhffWxlwOoqwPSMlhwuxN6pouYO/9EW4BSmRaMNkl3XoLCRkZG', 'korisnik', '2026-05-23 14:23:49'),
+(3, 'test2', 'test2@test.hr', '$2y$10$iE2vcmI5.8iKpv2ZcsYPbe1Q3gS2KQBh99bosIpqGFJwRl5KANkpa', 'korisnik', '2026-05-23 15:21:50');
 
--- Uvoz filmova iz CSV-a
 INSERT INTO filmovi (naslov, zanr, godina, trajanje_min, ocjena, reziser, zemlja) VALUES
 ('The Shawshank Redemption','Drama',1994,142,9.3,'Frank Darabont','USA'),
 ('The Godfather','Crime, Drama',1972,175,9.2,'Francis Ford Coppola','USA'),
@@ -96,3 +97,24 @@ INSERT INTO filmovi (naslov, zanr, godina, trajanje_min, ocjena, reziser, zemlja
 ('Gladiator','Action, Adventure',2000,155,8.5,'Ridley Scott','USA/UK'),
 ('The Lion King','Animation, Adventure',1994,88,8.5,'Roger Allers','USA'),
 ('The Departed','Crime, Drama',2006,151,8.5,'Martin Scorsese','USA');
+
+INSERT INTO `ocjene` (`id`, `id_korisnik`, `id_slika`, `ocjena`, `komentar`, `vrijeme_ocjene`) VALUES
+(1, 2, 2, 4, '', '2026-05-23 14:46:18'),
+(6, 2, 1, 5, '', '2026-05-23 15:01:18');
+
+INSERT INTO `slike` (`id`, `naziv_datoteke`, `opis`, `putanja`, `izvor`, `uploaded_by`, `created_at`) VALUES
+(1, 'photo1.jpg', 'Meowtain', 'public/images/photo1.jpg', 'lokalno', 1, '2026-05-23 14:22:48'),
+(2, 'photo2.jpg', 'Fake RNG', 'public/images/photo2.jpg', 'lokalno', 1, '2026-05-23 14:23:05'),
+(3, 'api_slika_1.jpg', 'Slika 1', 'https://picsum.photos/900/600?random=1', 'api', 1, '2026-05-23 15:30:16'),
+(4, 'api_slika_2.jpg', 'Slika 2', 'https://picsum.photos/900/600?random=2', 'api', 1, '2026-05-23 15:30:16'),
+(5, 'api_slika_3.jpg', 'Slika 3', 'https://picsum.photos/900/600?random=3', 'api', 1, '2026-05-23 15:30:16'),
+(6, 'api_slika_4.jpg', 'Slika 4', 'https://picsum.photos/900/600?random=4', 'api', 1, '2026-05-23 15:30:16'),
+(7, 'api_slika_5.jpg', 'Slika 5', 'https://picsum.photos/900/600?random=5', 'api', 1, '2026-05-23 15:30:16'),
+(8, 'api_slika_6.jpg', 'Slika 6', 'https://picsum.photos/900/600?random=6', 'api', 1, '2026-05-23 15:30:16'),
+(9, 'api_slika_7.jpg', 'Slika 7', 'https://picsum.photos/900/600?random=7', 'api', 1, '2026-05-23 15:30:16'),
+(10, 'api_slika_8.jpg', 'Slika 8', 'https://picsum.photos/900/600?random=8', 'api', 1, '2026-05-23 15:30:16'),
+(11, 'api_slika_9.jpg', 'Slika 9', 'https://picsum.photos/900/600?random=9', 'api', 1, '2026-05-23 15:30:16'),
+(12, 'api_slika_10.jpg', 'Slika 10', 'https://picsum.photos/900/600?random=10', 'api', 1, '2026-05-23 15:30:16'),
+(13, 'api_slika_11.jpg', 'Slika 11', 'https://picsum.photos/900/600?random=11', 'api', 1, '2026-05-23 15:30:16'),
+(14, 'api_slika_12.jpg', 'Slika 12', 'https://picsum.photos/900/600?random=12', 'api', 1, '2026-05-23 15:30:16');
+
